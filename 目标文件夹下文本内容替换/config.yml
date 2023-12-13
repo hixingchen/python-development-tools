@@ -1,0 +1,4 @@
+file_name: application-development.yml #修改指定文件名下的内容
+destination_folder: D:\work\SVNProject\后勤4.0\code #目标文件夹下所有file_name文件
+before_content: pd_ibms_zhhq2_0 #待替换目标文本
+after_content: ibms_zhhq4_0 #替换文本
