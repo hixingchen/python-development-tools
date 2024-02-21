@@ -1,0 +1,5 @@
+target_directory: D:\work\SVNProject\后勤4.0\code # 扫描目录下所有需要替换的文件
+replace_file: allright-core-9.3.jar # 需要替换文件的名称
+source_directory: D:\work\PythonProject\overwrite_file # 源文件所在目录
+skip_directorys: # 需要跳过的目录
+- node_modules
