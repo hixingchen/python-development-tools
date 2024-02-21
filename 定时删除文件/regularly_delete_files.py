@@ -8,12 +8,11 @@ config_params = []
 with open('config.yml','r',encoding='utf-8') as file:
     config_params = yaml.safe_load(file)
 
-current_date = date.today()
-begin_date = current_date - timedelta(days=config_params['days'])
-
 file_nums = 0
 
 def work():
+    current_date = date.today()
+    begin_date = current_date - timedelta(days=config_params['days'])
     file_nums = 0
     print(f"定时任务执行时间:{current_date}")
     for root, dirs, files in os.walk('./'):
