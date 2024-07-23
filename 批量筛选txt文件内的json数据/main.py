@@ -29,7 +29,12 @@ if __name__ == "__main__":
                         flag = False
                         print("采集时间转换错误")
                         break
-                    line = txt.readline()
+                    try:
+                        line = txt.readline()
+                    except:
+                        print(file_path+"--->文件解析错误,确保文件是utf-8格式!!!!!!")
+                        flag = False
+                        break
             #如果flag是true删除原有文件，保留复制文件，false做相反操作
             if flag:
                 if os.path.exists(file_path):
