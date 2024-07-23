@@ -1,0 +1,2 @@
+folder_path: D:\work\PythonProject\data #处理文件夹路径下所有文件
+collect_date: '2024-01-01' #删除采集时间之前的数据
