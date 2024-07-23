@@ -19,7 +19,12 @@ if __name__ == "__main__":
             with open(file_path,'r',encoding='utf-8') as txt,open(file_temp_path,'w',encoding='utf-8') as txt_temp:
                 line = txt.readline()
                 while line:
-                    json_data = json.loads(line)
+                    try:
+                        json_data = json.loads(line)
+                    except:
+                        print(file_path+"--->文件内容非json格式")
+                        flag = False
+                        break
                     try:
                         collect_date = datetime.strptime(json_data['collectDate']+"","%Y-%m-%d %H:%M:%S").date()
                         target_date = datetime.strptime(config_params['collect_date'],"%Y-%m-%d").date()
