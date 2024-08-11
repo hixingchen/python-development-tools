@@ -1,0 +1,40 @@
+modules:
+- 'assets'
+- 'energy'
+- 'app'
+- 'fuse'
+- 'dormitory'
+- 'hospital'
+- 'oa'
+- 'owner'
+- 'position'
+- 'property'
+- 'shop'
+- 'smart'
+- 'traffic'
+- 'dining'
+- 'ai'
+
+template_module: ibms # 模板模块
+jp_ui_ignore_files: # 前端合并时忽略的文件
+- 'node_modules'
+- '.vscode'
+- 'package-lock.json'
+
+delete_dist: false # 是否删除dist重新生成,window下dist和node_modules需要手动删，linux可将delete_dist改为true
+jp_ui_copy: false # 前端是否复制整合
+jp_ui_package: false # 前端是否打包
+jp_console_merge: false # 是否合并后端
+deploy: true # 是否部署项目到服务器上
+stop_input: false # 是否部署结束或程序报错时确认结束
+success_remarks: allright 启动成功 #判断部署成功结束语，匹配成功就退出日志打印
+
+login_mode: 'pem' # 登录方式 pem:秘钥登录 password:密码登录
+merge_path: 'backup/merge/dist' # 合并路径
+host_name: '服务器地址'
+port: '22'
+user_name: 'root'
+password: '密码'
+pem_path: './tenxunyun.pem' #秘钥路径
+tomcat_name: 'apache-tomcat-9.0.73-8080'
+tomcat_path: '/home/zhhq'
