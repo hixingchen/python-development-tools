@@ -168,17 +168,11 @@ def deploy():
     execute_command(ssh,f"mkdir {os.path.join(config_params['tomcat_path'],config_params['tomcat_name'],'webapps','ROOT')}")
     execute_command(ssh,f"mkdir {os.path.join(config_params['tomcat_path'],config_params['tomcat_name'],'webapps','allright')}")
     sftp = ssh.open_sftp()
-    print("测试1")
     remote_cope_dir(os.path.join(base_url,config_params['merge_path'],'jp-ui','dist'),os.path.join(config_params['tomcat_path'],config_params['tomcat_name'],"webapps",'ROOT'),sftp)
-    print("测试2")
     remote_cope_dir(os.path.join(base_url,config_params['merge_path'],'allright'),os.path.join(config_params['tomcat_path'],config_params['tomcat_name'],"webapps",'allright'),sftp)
-    print("测试3")
     execute_command(ssh,f"cd {os.path.join(config_params['tomcat_path'],config_params['tomcat_name'],'bin')};./startup.sh")
-    print("测试4")
     stdout = execute_command(ssh,f"cd {os.path.join(config_params['tomcat_path'],config_params['tomcat_name'],'logs')};tail -f catalina.out")
-    print("测试5")
     for line in iter(lambda: stdout.readline(2048),""):
-        print("测试6")
         print(line,end="")
         if line.find(config_params['success_remarks'])>0:
             break
