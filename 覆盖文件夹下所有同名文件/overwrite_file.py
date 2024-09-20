@@ -19,12 +19,12 @@ if __name__ == "__main__":
                 if skip_directory in dirs:
                     dirs.remove(skip_directory)
             for file in files:
-                if file == config_params['replace_file']:
+                if file == config_params['target_file']:
                     file_path = os.path.join(root,file)
-                    if os.path.isfile(os.path.join(config_params['source_directory'],config_params['replace_file'])):
+                    if os.path.isfile(os.path.join(config_params['source_directory'],config_params['source_file'])):
                         print("正在拷贝"+file_path)
                         os.chmod(file_path, 0o777)# 修改权限，有些只读文件覆盖会报错
-                        shutil.copy2(os.path.join(config_params['source_directory'],config_params['replace_file']),file_path)
+                        shutil.copy2(os.path.join(config_params['source_directory'],config_params['source_file']),file_path)
         print("拷贝完成-------")
     except Exception as e:
         print(e)
