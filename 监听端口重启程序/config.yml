@@ -1,0 +1,6 @@
+ports:
+- 6379
+- 8161
+exe_path:
+- D:\software\commonBag\redis\redis-server.exe
+- D:\software\commonBag\apache-activemq-5.15.13\bin\win64\activemq.bat
