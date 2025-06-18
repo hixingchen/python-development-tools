@@ -1,0 +1,8 @@
+login_mode: 'password' # 登录方式 pem:秘钥登录 password:密码登录
+host_name: '11.11.11.11'
+port: '11'
+user_name: 'root'
+password: '密码'
+pem_path: './tenxunyun.pem' #秘钥路径
+server_download_path: '/home/zhhq/apache-tomcat-9.0.73-8083'
+local_save_path: '/home/zhhq/apache-tomcat-9.0.73-8083/temp'
